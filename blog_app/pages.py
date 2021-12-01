@@ -14,7 +14,7 @@ def create_img(img_path: str, height: int, style: dict = {}):
 
 logo = html.Div(
     create_img("data/tomato.jpeg", 100),
-    style={"left": "7%", "position": "fixed", "zIndex": "4"},
+    style={"left": "10%", "position": "fixed", "zIndex": "4"},
 )
 title = html.Div(
     create_img("data/title.png", 100),
@@ -39,8 +39,8 @@ navbar = dbc.NavbarSimple(
             label=" - ",
             direction="down",
             style={
-                "right": "7.7%",
-                "top": "1.29%",
+                "right": "10%",
+                "top": "3%",
                 "position": "fixed",
                 "zIndex": "5",
                 "height": 50,
@@ -50,7 +50,7 @@ navbar = dbc.NavbarSimple(
         create_img(
             "data/tomato.jpeg",
             100,
-            {"right": "7%", "top": "0%", "position": "fixed", "zIndex": "3"},
+            {"right": "9.3%", "top": "0%", "position": "fixed", "zIndex": "3"},
         ),
     ],
     color="black",
@@ -58,10 +58,32 @@ navbar = dbc.NavbarSimple(
     dark=True,
 )
 
-new_page = html.Div(
+home_page = html.Div(
     [
         logo,
         title,
         navbar,
+    ]
+)
+
+war_page = html.Div(
+    [
+        logo,
+        title,
+        navbar,
+        html.Br(),
+        html.Br(),
+        html.H5('History of War and Conflict')
+    ]
+)
+
+ancients_page = html.Div(
+    [
+        logo,
+        title,
+        navbar,
+        html.Br(),
+        html.Br(),
+        html.H5('Ancient Peoples')
     ]
 )

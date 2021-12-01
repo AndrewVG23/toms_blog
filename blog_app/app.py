@@ -14,7 +14,9 @@ import dash_bootstrap_components as dbc
 from flask import Flask, redirect
 
 from pages import (
-    new_page
+    home_page,
+    war_page,
+    ancients_page
 )
 
 
@@ -35,13 +37,17 @@ app.layout = html.Div([dcc.Location(id="url", refresh=False), html.Div(id="page-
 @server.route("/")
 def home():
     """Landing page."""
-    return redirect("blog-beast/new")
+    return redirect("blog-beast/home")
 
  # Callback for navigating between pages
 @callback(Output("page-content", "children"), [Input("url", "pathname")])
 def display_page(pathname):
-    if pathname == "/blog-beast/new":
-        return new_page
+    if pathname == "/blog-beast/home":
+        return home_page
+    if pathname == "/blog-beast/history-of-war-and-conflict":
+        return war_page
+    if pathname == "/blog-beast/ancient-peoples":
+        return ancients_page
 
 
 if __name__ == "__main__":
