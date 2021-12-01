@@ -26,17 +26,11 @@ navbar = dbc.NavbarSimple(
         dbc.DropdownMenu(
             children=[
                 dbc.DropdownMenuItem(
-                    html.H6(dbc.NavLink("New", href="/concept-maps/new", style={"color": "white"})),
+                    html.H6(dbc.NavLink("History of War and Conflict", href="/blog-beast/history-of-war-and-conflict", style={"color": "white"})),
                     header=True,
                 ),
                 dbc.DropdownMenuItem(
-                    html.H6(
-                        dbc.NavLink(
-                            "Update",
-                            href="/concept-maps/update",
-                            style={"color": "white"},
-                        )
-                    ),
+                    html.H6(dbc.NavLink("Ancient Peoples", href="/blog-beast/ancient-peoples", style={"color": "white"})),
                     header=True,
                 ),
             ],
@@ -63,8 +57,6 @@ navbar = dbc.NavbarSimple(
     style={"height": 60},
     dark=True,
 )
-
-
 
 new_page = html.Div(
     [
