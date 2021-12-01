@@ -1,13 +1,11 @@
 import base64
 import os
-import pandas as pd
 
-from dash import html, dcc, dash_table
+from dash import html
 import dash_bootstrap_components as dbc
-import plotly.graph_objs as go
 
 def create_img(img_path: str, height: int, style: dict = {}):
-    encoded_image = base64.b64encode(open(img_path, "rb").read())
+    encoded_image = base64.b64encode(open(os.path.join(os.getcwd(), img_path), "rb").read())
     return html.Img(
         src="data:image/png;base64,{}".format(encoded_image.decode()),
         height=height,
@@ -15,11 +13,11 @@ def create_img(img_path: str, height: int, style: dict = {}):
     )
 
 logo = html.Div(
-    create_img("blog_app/data/tomato.jpeg", 100),
+    create_img("data/tomato.jpeg", 100),
     style={"left": "7%", "position": "fixed", "zIndex": "4"},
 )
 title = html.Div(
-    create_img("blog_app/data/title.png", 100),
+    create_img("data/title.png", 100),
     style={"left": "38.8%", "position": "fixed", "zIndex": "4"},
 )
 
@@ -56,7 +54,7 @@ navbar = dbc.NavbarSimple(
             in_navbar=True,
         ),
         create_img(
-            "blog_app/data/tomato.jpeg",
+            "data/tomato.jpeg",
             100,
             {"right": "7%", "top": "0%", "position": "fixed", "zIndex": "3"},
         ),

@@ -1,7 +1,3 @@
-import json
-import os
-import re
-
 from dash import (
     Dash,
     Input,
@@ -15,7 +11,7 @@ from dash import (
 )
 import dash_bootstrap_components as dbc
 
-from flask import Flask, session, redirect
+from flask import Flask, redirect
 
 from pages import (
     new_page
