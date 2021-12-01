@@ -21,7 +21,6 @@ from pages import (
 server = Flask(__name__)  # define flask app.server
 server.config["SECRET_KEY"] = "TOM"
 
-
 app = Dash(
     __name__,
     external_stylesheets=[dbc.themes.CYBORG],
@@ -31,7 +30,6 @@ app = Dash(
 app.title = "Tom's Blog"
 app.config.suppress_callback_exceptions = True
 app.layout = html.Div([dcc.Location(id="url", refresh=False), html.Div(id="page-content")])
-
 
 
 @server.route("/")
